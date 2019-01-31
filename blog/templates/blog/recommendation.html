@@ -1,0 +1,367 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="MAVIA - Register, Reservation, Questionare, Reviews form wizard">
+	<meta name="author" content="Ansonika">
+	<title>hitrekkers</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="iimg/favicon.ico{% static '' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="iimg/apple-touch-icon-57x57-precomposed.png{% static '' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="iimg/apple-touch-icon-72x72-precomposed.png{% static '' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="iimg/apple-touch-icon-114x114-precomposed.png{% static '' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="iimg/apple-touch-icon-144x144-precomposed.png{% static '' %}">
+
+	<!-- GOOGLE WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="{% static 'ccss/animate.min.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/menu.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/style.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/responsive.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/icon_fonts/css/all_icons_min.css' %}" rel="stylesheet">
+	<link href="{% static 'ccss/skins/square/grey.css' %}" rel="stylesheet">
+	
+	<!-- COLOR CSS -->
+	<link href="{% static 'ccss/color_3.css' %}" rel="stylesheet">
+	
+	<!-- BASE CSS -->
+	<link href="{% static 'ccss/date_time_picker.css' %}" rel="stylesheet">
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="{% static 'ccss/custom.css' %}" rel="stylesheet">
+
+	<script src="{% static 'jjs/modernizr.js' %}"></script>
+	<!-- Modernizr -->
+	<style>
+		.slidecontainer {
+		width: 100%;
+		}
+
+		.slider {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 25px;
+		background: #d3d3d3;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+		}
+
+		.slider:hover {
+		opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 25px;
+		height: 25px;
+		background: #4CAF50;
+		cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+		width: 25px;
+		height: 25px;
+		background: #4CAF50;
+		cursor: pointer;
+		}
+</style>
+
+</head>
+
+<body> 
+
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+
+
+	<main>
+		<div id="form_container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div id="left_form">
+						<figure><img src="{% static 'iimg/registration_bg.svg' %}" alt=""></figure>
+						<h2>Questionaire</h2>
+						<p><u>Provide us a genuine answer</u>.<br> so that the recommendations will be relavent.</p>
+						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+
+					<div id="wizard_container">
+						<div id="top-wizard">
+							<div id="progressbar"></div>
+						</div>
+						<!-- /top-wizard -->
+						<!-- <form name="example-1" id="wrapped" action="{% url 'r_result' %}" method="POST"> -->
+						<form name="example-1" action="{% url 'r_result' %}" method="POST">
+						{% csrf_token %}
+							<input id="website" name="website" type="text" value="">
+							<!-- Leave for security protection, read docs for details -->
+							<div id="middle-wizard">
+								
+								<div class="step">
+									<h3 class="main_question"><strong>1/5</strong>How <u><b>far</b></u> you want to go for a trekking?</h3>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Satisfied" name="satisfaction" class="icheck required">1-2 days of trek</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Somewhat satisfied" name="satisfaction" class="icheck required">3-7 days of trek</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Neutral" name="satisfaction" class="icheck required">8-14 days of trek</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Somewhat dissatisfied" name="satisfaction" class="icheck required">15-20 days of trek</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Very dissatisfied" name="satisfaction" class="icheck required">20+ days of trek</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+								<!-- /step -->
+
+
+								<div class="step">
+									<h3 class="main_question"><strong>2/5</strong>What <u><b>trekking type</b></u> you want to go?</h3>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Cycling" name="question_2[]" class="icheck required">Cycling</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Walking" name="question_2[]" class="icheck required">Walking</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Biking" name="question_2[]" class="icheck required">Biking</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Peak Climbing" name="question_2[]" class="icheck required">Peak Climbing</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Others" name="question_2[]" class="icheck required">Others</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+
+
+								<div class="step">
+									<h3 class="main_question"><strong>3/5</strong>What <u><b>destination type</b></u> you want to go?</h3>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Adventure" name="question_3[]" class="icheck required">Adventure</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Pilgrims" name="question_3[]" class="icheck required">Pilgrims</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Waterbody" name="question_3[]" class="icheck required">Waterbody</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Himalayas" name="question_3[]" class="icheck required">Himalayas</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Nature Seeing" name="question_3[]" class="icheck required">Nature Seeing</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Others" name="question_3[]" class="icheck required">Others</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+
+
+
+								
+								<div class="step">
+									<h3 class="main_question"><strong>4/5</strong>What <u><b>accomodation type</b></u> you want to have?</h3>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Hotel" name="question_4[]" class="icheck required">Hotel</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Teahouse" name="question_4[]" class="icheck required">Teahouse</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Motel" name="question_4[]" class="icheck required">Motel</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Tent" name="question_4[]" class="icheck required">Tent</label>
+											</div>
+											<div class="form-group radio_input">
+												<label><input type="checkbox" value="Motivated" name="question_4[]" class="icheck required">Homestay</label>
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+								<!-- /step -->
+
+								<div class="submit step">
+									<h3 class="main_question"><strong>5/5</strong>Provide your <b>appropriate range.</b></h3>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<p><b style="color:#581845;">Temperature:</b> (1-10: cold temperature, 11-20: hot temperature)</p>
+												<input type="range" min="1" max="20" value="6" class="slider" id="myRange1">
+	  											<p>Value: <b style="color:#581845;"><span id="demo1"></span></b></p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<p><b style="color:#581845;">Altitude:</b> (1-10: Less Altitude, 11-20: High Altitude)</p>
+												<input type="range" min="1" max="20" value="10" class="slider" id="myRange2">
+  												<p>Value: <b style="color:#581845;"><span id="demo2"></span></b></p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<p><b style="color:#581845;">Difficulty:</b> (1-5: Easy, 6-14: Medium, 15-20: Hard)</p>
+												<input type="range" min="1" max="20" value="10" class="slider" id="myRange3">
+  												<p>Value: <b style="color:#581845;"><span id="demo3"></span></b></p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<p><b style="color:#581845;">Security:</b> (1-10: Less Secure, 11-20: More Secure)</p>
+												<input type="range" min="1" max="20" value="15" class="slider" id="myRange4">
+  												<p>Value: <b style="color:#581845;"><span id="demo4"></span></b></p>
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+
+									<!-- <div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<input type="email" name="email" class="form-control required" placeholder="Your Email">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone">
+											</div>
+										</div>
+									</div>
+								end of/row --> 
+									<br>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group terms">
+												<input name="terms" type="checkbox" class="icheck required" value="yes">
+												<label>Please accept <a href="#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a> ?</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /step-->
+							</div>
+							<!-- /middle-wizard -->
+							<div id="bottom-wizard">
+								<button type="button" name="backward" class="backward">Backward </button>
+								<button type="button" name="forward" class="forward">Forward</button>
+								<button type="submit" name="process" class="submit">Submit</button>
+							</div>
+							<!-- /bottom-wizard -->
+						</form>
+					</div>
+					<!-- /Wizard container -->
+				</div>
+			</div><!-- /Row -->
+		</div><!-- /Form_container -->
+	</main>
+	<footer id="home" class="clearfix">
+		<p>© 2019 hitrekkers</p>
+		<ul>
+			<li><a href="#0" class="animated_link">Why this questions?</a></li>
+			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
+			<li><a href="#0" class="animated_link">Contacts</a></li>
+		</ul>
+	</footer>
+	<!-- end footer-->
+
+	
+
+	<!-- SCRIPTS -->
+	<!-- Jquery-->
+	<script src="{% static 'jjs/jquery-3.2.1.min.js' %}"></script>
+	<!-- Common script -->
+	<script src="{% static 'jjs/common_scripts.js' %}"></script>
+	<!-- Wizard script -->
+	<script src="{% static 'jjs/questionare_wizard_func.js' %}"></script>
+	<!-- Menu script -->
+	<script src="{% static 'jjs/velocity.min.js' %}"></script>
+	<script src="{% static 'jjs/main.js' %}"></script>
+	<!-- Theme script -->
+	<script src="{% static 'jjs/functions.js' %}"></script>
+	<script>
+		var slider1 = document.getElementById("myRange1");
+		var slider2 = document.getElementById("myRange2");
+		var slider3 = document.getElementById("myRange3");
+		var slider4 = document.getElementById("myRange4");
+		var output1 = document.getElementById("demo1");
+		var output2 = document.getElementById("demo2");
+		var output3 = document.getElementById("demo3");
+		var output4 = document.getElementById("demo4");
+
+		output1.innerHTML = slider1.value;
+
+		slider1.oninput = function() {
+		  output1.innerHTML = this.value;
+		}
+
+		output2.innerHTML = slider2.value;
+
+		slider2.oninput = function() {
+		  output2.innerHTML = this.value;
+		}
+
+		output3.innerHTML = slider3.value;
+
+		slider3.oninput = function() {
+		  output3.innerHTML = this.value;
+		}
+
+		output4.innerHTML = slider4.value;
+
+		slider4.oninput = function() {
+		  output4.innerHTML = this.value;
+		}
+
+</script>
+	
+
+</body>
+</html>

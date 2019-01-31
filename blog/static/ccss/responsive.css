@@ -1,0 +1,111 @@
+/*============================================================================================*/
+/* RESPONSIVE  */
+/*============================================================================================*/
+@media (max-width: 1024px) {
+	
+	#form_container, footer#home {
+	   width:800px;
+    }
+	
+}
+@media (max-width: 991px) {
+	
+	#form_container {
+		width:auto;
+		margin-top: 0;
+	}
+	#form_container .row {
+		margin: 0;
+	}
+	footer#home {
+		width:100%;
+		padding: 0 30px;
+	}
+	#left_form {
+		text-align:left;
+		padding:30px;
+		min-height:inherit;
+    }
+	#left_form img{
+		float: left;
+		margin-right: 30px;
+    }
+	a#more_info{
+		left:auto;
+		right:30px;
+    }
+	#top-wizard {
+		margin-left: 0;
+	}
+	#wizard_container {
+		min-height:inherit;
+	}
+	#middle-wizard {
+		padding: 30px 30px 120px 30px;
+	}
+	
+}
+
+/* Tablet*/
+@media (max-width: 768px) {
+	
+}
+
+/* Mobile Landscape */
+@media (max-width: 767px) {
+	
+	#form_container .row > [class*='col-'] {
+		padding-left: 0 !important;
+    	padding-right: 0 !important;
+	}
+	
+	h1.main_title,
+	h2.main_title {
+		font-size: 32px;
+	}
+	h1.main_title span,
+	h2.main_title span {
+		font-size: 18px;
+	}
+	p.lead.styled {
+		font-size: 16px;
+	}
+	
+	#left_form img{
+		float: none;
+		margin-right: 0;
+		width: 100px;
+		height: 100%;
+    }
+	/* Margin tools */
+	.margin_60 {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.margin_30 {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.margin_60_35 {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.add_bottom_60 {
+		margin-bottom: 30px;
+	}
+	
+	#bottom-wizard {
+	right:35px;
+}
+
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+	
+	label.rating_type, .rating  {float:left; display:block;}
+	label.rating_type  {width:100%;}
+	
+	#map_contact {height: 300px;}
+	 
+}

@@ -1,0 +1,48 @@
+/*Form*/
+#left_form {
+	background-color: #92278f;
+}
+/* Wizard Buttons*/
+button.backward,
+button.forward,
+button.submit {
+	background: #0073b9;
+}
+button.backward {
+	color: #333;
+	background: #e8e8e8;
+	padding: 10px 20px 10px 30px;
+}
+.backward:hover,
+.forward:hover {
+	background: #333;
+	color: #fff;
+}
+/*Typography*/
+h2.main_title {
+	color: #92278f;
+}
+/*General links color*/
+a {
+	color: #0073b9;
+}
+a:hover,
+a:focus {
+	color: #333;
+}
+a.btn_1,
+.btn_1 {
+	background: #0073b9;
+}
+
+a.btn_1:hover,
+.btn_1:hover {
+	background: #333;
+	color: #fff;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #0073b9;
+}
+.team-item-detail-inner .social li a:hover {
+	color: #0073b9;
+}

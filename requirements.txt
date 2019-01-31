@@ -1,0 +1,14 @@
+astroid==2.1.0
+colorama==0.4.1
+Django==2.1.4
+django-bootstrap3==11.0.0
+django-multiselectfield==0.1.8
+django-summernote==0.8.11.4
+django-tinymce==2.8.0
+isort==4.3.4
+lazy-object-proxy==1.3.1
+mccabe==0.6.1
+pylint==2.2.2
+pytz==2018.7
+six==1.11.0
+wrapt==1.10.11

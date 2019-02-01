@@ -18,6 +18,9 @@ def r_result(request):
     if request.method == 'POST':
         form = DurationForm(request.POST)
         if form.is_valid():
+            trekking = form.cleaned_data['trekking_type']
+            destination = form.cleaned_data['destination_type']
+            accomodation = form.cleaned_data['accomodation_type']
             places = Destination.objects.all()
             hamro = form.cleaned_data['duration']
             latitude = form.cleaned_data['latitude']
@@ -42,8 +45,7 @@ def r_result(request):
                 if distance <= int(hamro):
                     data[name] = distance
 
-            gogo = {'hamro':data}
-            # 'rec':recommend,'rec':recommend,
+            gogo = {'hamro': hamro, 'lati': latitude, 'long': longitude, 'places': places, 'trekking': trekking, 'destination' : destination, 'accomodation' : accomodation}
             return render(request, 'blog/r_result.html', gogo)
     else:
         form = DurationForm()

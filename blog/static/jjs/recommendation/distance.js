@@ -3,6 +3,10 @@ if(navigator.geolocation)
 		navigator.geolocation.getCurrentPosition(onPositionReceived);
 }
 
+
+
+
+
 var places = [
 
 	{name:'ABC', latitude:'28.5300', longitude:'83.8780'},
@@ -17,6 +21,9 @@ function onPositionReceived(position)
 	var data = new Array();
 	data['user_lat'] = position.coords.latitude;
 	data['user_lon'] = position.coords.longitude;
+
+	document.getElementById("id_latitude").value = position.coords.latitude;
+	document.getElementById('id_longitude').value = position.coords.longitude;
 
 	var hamro = findDistance(data, places);
 	console.log(hamro);
@@ -82,6 +89,13 @@ function findDistance(data, places)
 
   return duration;
 }
+
+
+
+
+
+
+
 
 // const place = new UserPosition(45.454, 34.3434);
 //

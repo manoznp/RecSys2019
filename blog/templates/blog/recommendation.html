@@ -28,10 +28,10 @@
 	<link href="{% static 'ccss/responsive.css' %}" rel="stylesheet">
 	<link href="{% static 'ccss/icon_fonts/css/all_icons_min.css' %}" rel="stylesheet">
 	<link href="{% static 'ccss/skins/square/grey.css' %}" rel="stylesheet">
-	
+
 	<!-- COLOR CSS -->
 	<link href="{% static 'ccss/color_3.css' %}" rel="stylesheet">
-	
+
 	<!-- BASE CSS -->
 	<link href="{% static 'ccss/date_time_picker.css' %}" rel="stylesheet">
 
@@ -79,13 +79,13 @@
 
 </head>
 
-<body> 
+<body>
 
-	
+
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
 	</div><!-- /Preload -->
-	
+
 	<div id="loader_form">
 		<div data-loader="circle-side-2"></div>
 	</div><!-- /loader_form -->
@@ -116,26 +116,31 @@
 							<input id="website" name="website" type="text" value="">
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
-								
+
 								<div class="step">
 									<h3 class="main_question"><strong>1/5</strong>How <u><b>far</b></u> you want to go for a trekking?</h3>
 									<div class="row">
 										<div class="col-md-12">
-											<div class="form-group radio_input">
-												<label><input type="radio" value="Satisfied" name="satisfaction" class="icheck required">1-2 days of trek</label>
+											{{ form.duration }}
+
+											{{form.latitude.as_hidden}}
+
+											{{form.longitude.as_hidden}}
+											<!-- <div class="form-group radio_input">
+												<label><input type="radio" value="0-100" name="duration" class="icheck required">1-2 days of trek</label>
 											</div>
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Somewhat satisfied" name="satisfaction" class="icheck required">3-7 days of trek</label>
+												<label><input type="radio" value="100-250" name="duration" class="icheck required">3-7 days of trek</label>
 											</div>
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Neutral" name="satisfaction" class="icheck required">8-14 days of trek</label>
+												<label><input type="radio" value="250-450" name="duration" class="icheck required">8-14 days of trek</label>
 											</div>
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Somewhat dissatisfied" name="satisfaction" class="icheck required">15-20 days of trek</label>
+												<label><input type="radio" value="450-600" name="duration" class="icheck required">15-20 days of trek</label>
 											</div>
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Very dissatisfied" name="satisfaction" class="icheck required">20+ days of trek</label>
-											</div>
+												<label><input type="radio" value="600-1000" name="duration" class="icheck required">20+ days of trek</label>
+											</div> -->
 										</div>
 									</div>
 									<!-- /row -->
@@ -201,7 +206,7 @@
 
 
 
-								
+
 								<div class="step">
 									<h3 class="main_question"><strong>4/5</strong>What <u><b>accomodation type</b></u> you want to have?</h3>
 									<div class="row">
@@ -275,7 +280,7 @@
 											</div>
 										</div>
 									</div>
-								end of/row --> 
+								end of/row -->
 									<br>
 									<div class="row">
 										<div class="col-md-12">
@@ -310,6 +315,9 @@
 			<li><a href="#0" class="animated_link">Contacts</a></li>
 		</ul>
 	</footer>
+	<!-- end footer-->
+
+
 
 	<!-- SCRIPTS -->
 	<!-- Jquery-->
@@ -323,6 +331,9 @@
 	<script src="{% static 'jjs/main.js' %}"></script>
 	<!-- Theme script -->
 	<script src="{% static 'jjs/functions.js' %}"></script>
+
+	<!-- recommendation script -->
+	<script type="text/javascript" src="{% static 'jjs/recommendation/distance.js' %}"></script>
 	<script>
 		var slider1 = document.getElementById("myRange1");
 		var slider2 = document.getElementById("myRange2");
@@ -358,7 +369,7 @@
 		}
 
 </script>
-	
+
 
 </body>
 </html>

@@ -6,11 +6,11 @@ def HomePage(request):
     return render(request, 'blog/index.html')
 
 def Recommendation(request):
-    return render(request, 'blog/recommendation.html')
+    form = DurationForm()
+    return render(request, 'blog/recommendation.html', {'form': form})
 
 def r_result(request):
-    return render(request, 'blog/r_result.html')
+        return render(request, 'blog/r_result.html')
 
 def post(request):
     return render(request, 'blog/post.html')
-    

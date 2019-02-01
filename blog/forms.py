@@ -1,11 +1,18 @@
 from django import forms
 
+
+# average trekkers walk 8 hour
+# average walking speed 3.6 /hour
+# 1 day 28.8 km
+
+
+
 DURATION_CHOICES = [
-    ('100', '1-2 days of trek'),
-    ('250', '3-7 days of trek'),
-    ('450', '8-14 days of trek'),
-    ('600', '15-20 days of trek'),
-    ('1000', '20+ days of trek'),
+    (60, '1-2 days of trek'),
+    (201, '3-7 days of trek'),
+    (403, '8-14 days of trek'),
+    (576, '15-20 days of trek'),
+    (1000, '20+ days of trek'),
 ]
 
 class DurationForm(forms.Form):

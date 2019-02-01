@@ -22,8 +22,10 @@ def r_result(request):
             hamro = form.cleaned_data['duration']
             latitude = form.cleaned_data['latitude']
             longitude = form.cleaned_data['longitude']
+            data = {}
             for place in places:
                 R = 6373.0
+                name = place.title
                 lat1 = radians(place.latitude)
                 lon1 = radians(place.longitude)
                 lat2 = radians(latitude)
@@ -37,23 +39,16 @@ def r_result(request):
 
                 distance = R * c
 
-                print("Result:", distance)
-                print("Should be:", 278.546, "km")
+                if distance <= int(hamro):
+                    data[name] = distance
 
-            gogo = {'hamro': hamro, 'lati': latitude, 'long': longitude, 'places': places}
+            gogo = {'hamro':data}
+            # 'rec':recommend,'rec':recommend,
             return render(request, 'blog/r_result.html', gogo)
     else:
         form = DurationForm()
     return HttpResponseRedirect('/recommendation/')
-        # form = request.POST.get('DurationForm')
-        # form.save()
-        # print (form['durationi'])
-        # return HttpResponseRedirect('/result/')
-        # hamro = request.form['duration'].value()
-        # hamro = request.POST.get['duration'].value()
-    # else:
-    #     form = DurationForm()
-    # return render(request, 'blog/recommendation.html', {'form': form})
+
 
 def post(request):
     return render(request, 'blog/post.html')

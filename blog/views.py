@@ -18,10 +18,14 @@ def r_result(request):
     if request.method == 'POST':
         form = DurationForm(request.POST)
         if form.is_valid():
+            trekking = form.cleaned_data['trekking_type']
+            destination = form.cleaned_data['destination_type']
+            accomodation = form.cleaned_data['accomodation_type']
             places = Destination.objects.all()
             hamro = form.cleaned_data['duration']
             latitude = form.cleaned_data['latitude']
             longitude = form.cleaned_data['longitude']
+
             for place in places:
                 R = 6373.0
                 lat1 = radians(place.latitude)
@@ -40,7 +44,7 @@ def r_result(request):
                 print("Result:", distance)
                 print("Should be:", 278.546, "km")
 
-            gogo = {'hamro': hamro, 'lati': latitude, 'long': longitude, 'places': places}
+            gogo = {'hamro': hamro, 'lati': latitude, 'long': longitude, 'places': places, 'trekking': trekking, 'destination' : destination, 'accomodation' : accomodation}
             return render(request, 'blog/r_result.html', gogo)
     else:
         form = DurationForm()

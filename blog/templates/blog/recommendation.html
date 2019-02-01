@@ -152,7 +152,8 @@
 									<h3 class="main_question"><strong>2/5</strong>What <u><b>trekking type</b></u> you want to go?</h3>
 									<div class="row">
 										<div class="col-md-6">
-											<div class="form-group radio_input">
+										{{ form.trekking_type }}
+											{% comment %} <div class="form-group radio_input">
 												<label><input type="checkbox" value="Cycling" name="question_2[]" class="icheck required">Cycling</label>
 											</div>
 											<div class="form-group radio_input">
@@ -168,7 +169,7 @@
 											</div>
 											<div class="form-group radio_input">
 												<label><input type="checkbox" value="Others" name="question_2[]" class="icheck required">Others</label>
-											</div>
+											</div> {% endcomment %}
 										</div>
 									</div>
 									<!-- /row -->
@@ -179,7 +180,8 @@
 									<h3 class="main_question"><strong>3/5</strong>What <u><b>destination type</b></u> you want to go?</h3>
 									<div class="row">
 										<div class="col-md-6">
-											<div class="form-group radio_input">
+										{{form.destination_type}}
+											{% comment %} <div class="form-group radio_input">
 												<label><input type="checkbox" value="Adventure" name="question_3[]" class="icheck required">Adventure</label>
 											</div>
 											<div class="form-group radio_input">
@@ -198,7 +200,7 @@
 											</div>
 											<div class="form-group radio_input">
 												<label><input type="checkbox" value="Others" name="question_3[]" class="icheck required">Others</label>
-											</div>
+											</div> {% endcomment %}
 										</div>
 									</div>
 									<!-- /row -->
@@ -211,7 +213,8 @@
 									<h3 class="main_question"><strong>4/5</strong>What <u><b>accomodation type</b></u> you want to have?</h3>
 									<div class="row">
 										<div class="col-md-6">
-											<div class="form-group radio_input">
+										{{form.accomodation_type}}
+											{% comment %} <div class="form-group radio_input">
 												<label><input type="checkbox" value="Hotel" name="question_4[]" class="icheck required">Hotel</label>
 											</div>
 											<div class="form-group radio_input">
@@ -227,7 +230,7 @@
 											</div>
 											<div class="form-group radio_input">
 												<label><input type="checkbox" value="Motivated" name="question_4[]" class="icheck required">Homestay</label>
-											</div>
+											</div> {% endcomment %}
 										</div>
 									</div>
 									<!-- /row -->
@@ -236,6 +239,7 @@
 
 								<div class="submit step">
 									<h3 class="main_question"><strong>5/5</strong>Provide your <b>appropriate range.</b></h3>
+									
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
@@ -266,6 +270,8 @@
 											</div>
 										</div>
 									</div>
+
+								 	
 									<!-- /row -->
 
 									<!-- <div class="row">
@@ -367,6 +373,8 @@
 		slider4.oninput = function() {
 		  output4.innerHTML = this.value;
 		}
+
+
 
 </script>
 

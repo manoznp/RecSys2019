@@ -68,7 +68,7 @@
 								<input type="search" class="header_search_input" required="required" placeholder="Type to Search...">
 								<img class="header_search_icon" src="{% static 'images/search.png' %}" alt="">
 							</form>
-							
+
 						</div>
 						<div class="hamburger ml-auto menu_mm">
 							<i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
@@ -79,7 +79,17 @@
 		</div>
 	</header>
 
-	<!-- Menu -->
+	 <!-- Menu -->
+
+   {{hamro}}
+   {{lati}}
+   {{long}}
+
+   {% for place in places %}
+
+       {{place.latitude}}
+
+   {% endfor %}
 
 	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
@@ -101,7 +111,7 @@
 			</ul>
 		</nav>
 	</div>
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -110,7 +120,7 @@
 			<div class="post_title" style="border-bottom: 2px solid white;">Your top 4 recommendations!</div>
 		</div>
 	</div>
-	
+
 	<!-- Page Content -->
 
 	<div class="page_content">
@@ -131,7 +141,7 @@
 							<div class="section_content">
 								<div class="grid clearfix">
 
-			
+
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
@@ -148,7 +158,7 @@
 
 
                                     <!-- Small Card With Background -->
-									
+
 
 
 									<!-- Small Card With Image -->
@@ -199,7 +209,7 @@
 						<div id="load_more" class="load_more_button text-center trans_200" style="border:1px dashed black;">Load More</div>
 					</div>
 				</div>
-						
+
 	<!-- Footer -->
 </div>
 

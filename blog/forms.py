@@ -82,17 +82,10 @@ class DurationForm(forms.Form):
      # form.fields['field_name'].widget = forms.HiddenInput()
 
     trekking_type = forms.CharField(
-    widget=forms.CheckboxSelectMultiple(choices=TREKKING_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
+    widget=forms.RadioSelect(choices=TREKKING_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
 
     destination_type = forms.CharField(
-    widget=forms.CheckboxSelectMultiple(choices=DESTINATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
+    widget=forms.RadioSelect(choices=DESTINATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
 
     accomodation_type = forms.CharField(
-    widget=forms.CheckboxSelectMultiple(choices=ACCOMODATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
-
-    # temp = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '2', 'id' : 'myRange1', 'class' : 'slider'}))
-
-    temperature = forms.ChoiceField(choices=TEMPERATURE_CHOICES)
-    altitude = forms.ChoiceField(choices=ALTITUDE_CHOICES)
-    difficulty = forms.ChoiceField(choices=DIFFICULTY_CHOICES)
-    security = forms.ChoiceField(choices=SECURITY_CHOICES)
+    widget=forms.RadioSelect(choices=ACCOMODATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))

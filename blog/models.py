@@ -20,7 +20,7 @@ class Destination(models.Model):
         ("Peak Climbing", "Peak Climbing"),
         ("Others", "Others")
         )
-    trekking_type       = MultiSelectField(choices=trekkingtype_choice, default="Walking")
+    trekking_type=MultiSelectField(choices=trekkingtype_choice, default="Walking")
 
     destinationtype_choice = (
         ("Adventure","Adventure"),
@@ -30,7 +30,7 @@ class Destination(models.Model):
         ("Nature Seeing", "Nature Seeing"),
         ("Others", "Others")
         )
-    destinaton_type         = MultiSelectField(choices=destinationtype_choice, default="Adventure")
+    destinaton_type= MultiSelectField(choices=destinationtype_choice, default="Adventure")
 
     accomodationtype_choice = (
         ("Hotel","Hotel"),

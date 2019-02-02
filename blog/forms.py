@@ -1,5 +1,6 @@
 
 from django import forms
+from django.forms.widgets import NumberInput
 
 
 # average trekkers walk 8 hour
@@ -41,6 +42,34 @@ ACCOMODATION_CHOICES = [
     ('Motel', 'Motel'),
     ('Tent', 'Tent'),
     ('Homestay', 'Homestay'),
+]
+
+TEMPERATURE_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+ALTITUDE_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+DIFFICULTY_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+SECURITY_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
 ]
 
 class DurationForm(forms.Form):

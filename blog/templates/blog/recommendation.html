@@ -100,7 +100,7 @@
 						<figure><img src="{% static 'iimg/registration_bg.svg' %}" alt=""></figure>
 						<h2>Questionaire</h2>
 						<p><u>Provide us a genuine answer</u>.<br> so that the recommendations will be relavent.</p>
-						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
+						
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -244,29 +244,40 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Temperature:</b> (1-10: cold temperature, 11-20: hot temperature)</p>
-												<input type="range" min="1" max="20" value="6" class="slider" id="myRange1">
-	  											<p>Value: <b style="color:#581845;"><span id="demo1"></span></b></p>
+												{% comment %} <input type="range" min="1" max="20" value="6" class="slider" id="myRange1">
+	  											<p>Value: <b style="color:#581845;"><span id="demo1"></span></b></p> {% endcomment %}
+												{% comment %} <select>
+													<option value="5">5°C</option>
+													<option value="5">10°C</option>
+													<option value="5">15°C</option>
+													<option value="5">20°C</option>
+												</select> {% endcomment %}
+												{{form.temperature}}
+												
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Altitude:</b> (1-10: Less Altitude, 11-20: High Altitude)</p>
-												<input type="range" min="1" max="20" value="10" class="slider" id="myRange2">
-  												<p>Value: <b style="color:#581845;"><span id="demo2"></span></b></p>
+												{% comment %} <input type="range" min="1" max="20" value="10" class="slider" id="myRange2">
+  												<p>Value: <b style="color:#581845;"><span id="demo2"></span></b></p> {% endcomment %}
+												  {{form.altitude}}
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Difficulty:</b> (1-5: Easy, 6-14: Medium, 15-20: Hard)</p>
-												<input type="range" min="1" max="20" value="10" class="slider" id="myRange3">
-  												<p>Value: <b style="color:#581845;"><span id="demo3"></span></b></p>
+												{% comment %} <input type="range" min="1" max="20" value="10" class="slider" id="myRange3">
+  												<p>Value: <b style="color:#581845;"><span id="demo3"></span></b></p> {% endcomment %}
+												  {{form.difficulty}}
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Security:</b> (1-10: Less Secure, 11-20: More Secure)</p>
-												<input type="range" min="1" max="20" value="15" class="slider" id="myRange4">
-  												<p>Value: <b style="color:#581845;"><span id="demo4"></span></b></p>
+												{% comment %} <input type="range" min="1" max="20" value="15" class="slider" id="myRange4">
+  												<p>Value: <b style="color:#581845;"><span id="demo4"></span></b></p> {% endcomment %}
+												  {{form.security}}
 											</div>
 										</div>
 									</div>

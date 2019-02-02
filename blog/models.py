@@ -36,7 +36,6 @@ class Destination(models.Model):
         ("Hotel","Hotel"),
         ("Teahouse", "Teahouse"),
         ("Motel", "Motel"),
-        ("Himalayas", "Himalayas"),
         ("Tent", "Tent"),
         ("Homestay", "Homestay")
         )

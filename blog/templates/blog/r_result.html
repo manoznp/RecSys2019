@@ -81,21 +81,9 @@
 
 	 <!-- Menu -->
 
-   {{trekking}}
-   {{destination}}
-   {{accomodation}}
-   {{hamro}}
-   {{th}}
-   {{lati}}
-   {{long}}
-   {{koko}}
-   {{dat}}
 
-   {% for place in places %}
 
-       {{place.latitude}}
 
-   {% endfor %}
 
 	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
@@ -144,12 +132,15 @@
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">Don't Miss</div>
 							</div>
+
+
+
 							<div class="section_content">
 								<div class="grid clearfix">
 
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
+									<!-- <div class="card card_default card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
                                 		<span>100%</span>
                             		</div>
@@ -159,29 +150,36 @@
 											<div class="card-title card-title-small"><a href="{% url 'post' %}">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 											<small class="post_meta"><a href="{% url 'post' %}">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 										</div>
-									</div>
+									</div> -->
 
 
 
                                     <!-- Small Card With Background -->
 
 
-
+                 {% for place in places %}
 									<!-- Small Card With Image -->
 									<div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
                                 		<span>100%</span>
                             		</div>
-										<img class="card-img-top" src="{% static 'images/post_22.jpg' %}" alt="">
+										<img class="card-img-top" src="/{{ place.image }}" alt="">
 										<div class="card-body">
-										<i><u><p style="color:#615F5F;">Adventure, Pilgrims</p></u></i>
-											<div class="card-title card-title-small"><a href="{% url 'post' %}">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+										<i><u><p style="color:#615F5F;">{{place.trekking_type}}</p></u></i>
+											<div class="card-title card-title-small"><a href="{% url 'post' %}">{{place.title}}</a></div>
 											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 										</div>
 									</div>
 
+                  {% endfor %}
+
+
+
+
+
+
                                     <!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
+									<!-- <div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
                                 		<span>100%</span>
                             		</div>
@@ -191,10 +189,14 @@
 											<div class="card-title card-title-small"><a href="{% url 'post' %}">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 										</div>
-									</div>
+									</div> -->
+
+
+
+
 
                                     <!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
+									<!-- <div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
                                 		<span>100%</span>
                             		</div>
@@ -204,10 +206,13 @@
 											<div class="card-title card-title-small"><a href="{% url 'post' %}">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 										</div>
-									</div>
+									</div> -->
 
 								</div>
 							</div>
+
+
+
 						</div>
 
 					</div>

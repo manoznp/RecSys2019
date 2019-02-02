@@ -231,11 +231,9 @@ def r_result(request):
 
             cosine_data = ApplyCosineSimi(data_for_cosine, common)
             finaldestination = Destination.objects.filter(title__in = common)
-<<<<<<< HEAD
+
             gogo = {'places': finaldestination, 'cosine': cosine_data}
-=======
-            gogo = {'places': finaldestination, 'temperature': temperature, 'altitude' : altitude, 'difficulty': difficulty, 'security' : security}
->>>>>>> cfe735d405da6da115960a759c76e352ae750da0
+
             return render(request, 'blog/r_result.html', gogo)
     else:
         form = DurationForm()

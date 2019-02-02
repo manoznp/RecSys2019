@@ -94,3 +94,7 @@ class DurationForm(forms.Form):
     altitude = forms.ChoiceField(choices=ALTITUDE_CHOICES)
     difficulty = forms.ChoiceField(choices=DIFFICULTY_CHOICES)
     security = forms.ChoiceField(choices=SECURITY_CHOICES)
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfe735d405da6da115960a759c76e352ae750da0

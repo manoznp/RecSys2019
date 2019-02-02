@@ -157,16 +157,18 @@
 
 
                  {% for place in places %}
+
+
 									<!-- Small Card With Image -->
 									<div class="card card_small_with_image grid-item" style="border: 1px solid #9D9C9C;">
 									<div class="ribbon">
-                                		<span>100%</span>
+                                		<span>{{cosine}}%</span>
                             		</div>
 										<img class="card-img-top" src="/media/{{ place.image }}" alt="">
 										<div class="card-body">
 										<i><u><p style="color:#615F5F;">{{place.trekking_type}}</p></u></i>
 											<div class="card-title card-title-small"><a href="{% url 'post' %}">{{place.title}}</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+											<small class="post_meta"><a href="#">Pramod khatiwada</a><span>Sep 29, 2017 at 9:48 am</span></small>
 										</div>
 									</div>
 

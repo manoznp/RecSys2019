@@ -8,7 +8,9 @@ from .forms import DurationForm
 
 from math import sin, cos, sqrt, atan2, radians
 
-import collections
+from scipy import spatial
+
+# import collections
 # Create your views here.
 
 #find common destinatioin
@@ -64,18 +66,38 @@ def FilterPlacesRadioInput(send):
     return radiofilterplace
 
 
+def ApplyCosineSimi(cosine_para, places):
+    print(cosine_para)
+    allnumlist = [int(x) for x in cosine_para]
+    print(allnumlist)
+    data = Destination.objects.filter(title__in = places)
+    result1=[]
+    for d in data:
+        place = [d.temperature, d.altitude, d.difficulty, d.security]
+        print(place)
+        result = (1 - spatial.distance.cosine(place, allnumlist)) * 100
+        result1.append(float("{0:.2f}".format(result)))
+        # g = float("{0:.2f}".format(x))
+    print(result1)
+    return result1
+        #temperature, altitude, difficulty, security
+        # place.append(d.temperature)
+        # place.append(d.altitude)
+        # place.append(d.difficulty)
+        # place.append(d.security)
+        # place_data.append(place)
+
+    # result = {}
+    # for input1 in place_data:
+    #     result{}
+    #     result = 1 - spatial.distance.cosine(dataSetI, dataSetII)
+
+
+
 #function to filter places
 def FilterPlaces(send):
 
     toto = send['trekking'];
-    # koko = list(toto.split(","));
-
-    # print(type(koko))
-    #
-    # print(koko[1])
-
-    # koba = list(toto)
-    # print(type(koba))
 
     new = toto.replace('[', '')
     new1 = new.replace(']', '')
@@ -87,32 +109,6 @@ def FilterPlaces(send):
     print(type(new4))
     print(new4)
 
-
-    # print(new3)
-    # print(trek)
-    # print(type(trek))
-
-
-
-
-
-    # str1 = ''.join(map(str, toto))
-    # ", ".join(map(str, alist))
-    # print(str1)
-    # print(toto)
-    # for i in toto:
-    # mardim = Destination.objects.all()
-    # if cycling checkbox is checked:
-    #     mardim = mardim.filter(trekking_type='Cycling')
-    # if walking checkbox is checked:
-    #     mardim = mardim.filter(trekking_type='Walking')
-    # mardim = Destination.objects.filter(
-    #     Q(trekking_type__contains=hami)
-    #         )
-    # mardim = {}
-
-    # for i in range(len(trek)):
-        # value
     store = []
     for trek in new4:
         if 'Walking' in trek:
@@ -149,11 +145,6 @@ def FilterPlaces(send):
             )
             store.append(value8)
 
-    # gobo = Destination.objects.filter(
-    # Q(trekking_type__contains="Cycling")
-    # )
-    # print(mardim)
-    # ram = set(mardim).intersection(value5)
     print('store')
     print(store)
     trekking_filtered = unique_list(store)
@@ -165,11 +156,6 @@ def FilterPlaces(send):
 
     # print('here')
     # print(seen_twice)
-
-
-
-    # try:
-
 
     print('gogogoo')
 
@@ -203,10 +189,10 @@ def r_result(request):
     if request.method == 'POST':
         form = DurationForm(request.POST)
         if form.is_valid():
-            # temperature = form.cleaned_data['temperature']
-            # altitude = form.cleaned_data['altitude']
-            # difficulty = form.cleaned_data['difficulty']
-            # security = form.cleaned_data['security']
+            temperature = form.cleaned_data['temperature']
+            altitude = form.cleaned_data['altitude']
+            difficulty = form.cleaned_data['difficulty']
+            security = form.cleaned_data['security']
             trekking = form.cleaned_data['trekking_type']
             destination = form.cleaned_data['destination_type']
             accomodation = form.cleaned_data['accomodation_type']
@@ -235,11 +221,17 @@ def r_result(request):
                     data.append(name)
 
             send = {'trekking':trekking, 'destination': destination, 'accomodation': accomodation}
-
+            #temperature, altitude, difficulty, security
+            data_for_cosine = [temperature, altitude, difficulty, security]
+            # {'temperature': temperature, 'altitude': altitude, 'difficulty': difficulty, 'security': security}
+            print(data_for_cosine)
             filteredplaces = FilterPlacesRadioInput(send)
+
             common = set(data).intersection(set(filteredplaces))
+
+            cosine_data = ApplyCosineSimi(data_for_cosine, common)
             finaldestination = Destination.objects.filter(title__in = common)
-            gogo = {'places': finaldestination}
+            gogo = {'places': finaldestination, 'cosine': cosine_data}
             return render(request, 'blog/r_result.html', gogo)
     else:
         form = DurationForm()

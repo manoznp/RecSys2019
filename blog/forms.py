@@ -89,3 +89,8 @@ class DurationForm(forms.Form):
 
     accomodation_type = forms.CharField(
     widget=forms.RadioSelect(choices=ACCOMODATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
+
+    temperature = forms.ChoiceField(choices=TEMPERATURE_CHOICES)
+    altitude = forms.ChoiceField(choices=ALTITUDE_CHOICES)
+    difficulty = forms.ChoiceField(choices=DIFFICULTY_CHOICES)
+    security = forms.ChoiceField(choices=SECURITY_CHOICES)

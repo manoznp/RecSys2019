@@ -1,5 +1,6 @@
 
 from django import forms
+from django.forms.widgets import NumberInput
 
 
 # average trekkers walk 8 hour
@@ -43,6 +44,34 @@ ACCOMODATION_CHOICES = [
     ('Homestay', 'Homestay'),
 ]
 
+TEMPERATURE_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+ALTITUDE_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+DIFFICULTY_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
+SECURITY_CHOICES = [
+    ('5', '5'),
+    ('10', '10'),
+    ('15', '15'),
+    ('20', '20'),
+]
+
 class DurationForm(forms.Form):
     duration = forms.CharField(
     widget=forms.RadioSelect(choices=DURATION_CHOICES, attrs={'class' : 'form-group radio_input icheck required'}))
@@ -60,3 +89,10 @@ class DurationForm(forms.Form):
 
     accomodation_type = forms.CharField(
     widget=forms.CheckboxSelectMultiple(choices=ACCOMODATION_CHOICES, attrs={'class' : 'form-group checkbox_input icheck required'}))
+
+    # temp = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '2', 'id' : 'myRange1', 'class' : 'slider'}))
+
+    temperature = forms.ChoiceField(choices=TEMPERATURE_CHOICES)
+    altitude = forms.ChoiceField(choices=ALTITUDE_CHOICES)
+    difficulty = forms.ChoiceField(choices=DIFFICULTY_CHOICES)
+    security = forms.ChoiceField(choices=SECURITY_CHOICES)

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> c0f38981251167fd8f2c8aa6e8c6aebf6ff94d30
 *.com
 *.class
 *.dll
@@ -7,6 +10,10 @@
 *.so
 *.pyc
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c0f38981251167fd8f2c8aa6e8c6aebf6ff94d30
 *.7z
 *.dmg
 *.gz

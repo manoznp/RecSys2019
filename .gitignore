@@ -1,29 +1,50 @@
-<<<<<<< HEAD
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 
-=======
->>>>>>> c0f38981251167fd8f2c8aa6e8c6aebf6ff94d30
-*.com
-*.class
-*.dll
-*.exe
-*.o
+# C extensions
 *.so
-*.pyc
 
-<<<<<<< HEAD
-=======
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
->>>>>>> c0f38981251167fd8f2c8aa6e8c6aebf6ff94d30
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-*.db
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
 *.log
-*.sql
-*.sqlite
+*.pot
+
+# Sphinx documentation
+docs/_build/

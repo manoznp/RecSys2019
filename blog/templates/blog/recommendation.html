@@ -18,6 +18,7 @@
 	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="iimg/apple-touch-icon-144x144-precomposed.png{% static '' %}">
 
 	<!-- GOOGLE WEB FONT -->
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 
 	<!-- BASE CSS -->
@@ -100,7 +101,7 @@
 						<figure><img src="{% static 'iimg/registration_bg.svg' %}" alt=""></figure>
 						<h2>Questionaire</h2>
 						<p><u>Provide us a genuine answer</u>.<br> so that the recommendations will be relavent.</p>
-						
+						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -239,50 +240,39 @@
 
 								<div class="submit step">
 									<h3 class="main_question"><strong>5/5</strong>Provide your <b>appropriate range.</b></h3>
-									
+
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Temperature:</b> (1-10: cold temperature, 11-20: hot temperature)</p>
-												{% comment %} <input type="range" min="1" max="20" value="6" class="slider" id="myRange1">
-	  											<p>Value: <b style="color:#581845;"><span id="demo1"></span></b></p> {% endcomment %}
-												{% comment %} <select>
-													<option value="5">5°C</option>
-													<option value="5">10°C</option>
-													<option value="5">15°C</option>
-													<option value="5">20°C</option>
-												</select> {% endcomment %}
-												{{form.temperature}}
-												
+												<input type="range" min="1" max="20" value="6" class="slider" id="myRange1">
+	  											<p>Value: <b style="color:#581845;"><span id="demo1"></span></b></p>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Altitude:</b> (1-10: Less Altitude, 11-20: High Altitude)</p>
-												{% comment %} <input type="range" min="1" max="20" value="10" class="slider" id="myRange2">
-  												<p>Value: <b style="color:#581845;"><span id="demo2"></span></b></p> {% endcomment %}
-												  {{form.altitude}}
+												<input type="range" min="1" max="20" value="10" class="slider" id="myRange2">
+  												<p>Value: <b style="color:#581845;"><span id="demo2"></span></b></p>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Difficulty:</b> (1-5: Easy, 6-14: Medium, 15-20: Hard)</p>
-												{% comment %} <input type="range" min="1" max="20" value="10" class="slider" id="myRange3">
-  												<p>Value: <b style="color:#581845;"><span id="demo3"></span></b></p> {% endcomment %}
-												  {{form.difficulty}}
+												<input type="range" min="1" max="20" value="10" class="slider" id="myRange3">
+  												<p>Value: <b style="color:#581845;"><span id="demo3"></span></b></p>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<p><b style="color:#581845;">Security:</b> (1-10: Less Secure, 11-20: More Secure)</p>
-												{% comment %} <input type="range" min="1" max="20" value="15" class="slider" id="myRange4">
-  												<p>Value: <b style="color:#581845;"><span id="demo4"></span></b></p> {% endcomment %}
-												  {{form.security}}
+												<input type="range" min="1" max="20" value="15" class="slider" id="myRange4">
+  												<p>Value: <b style="color:#581845;"><span id="demo4"></span></b></p>
 											</div>
 										</div>
 									</div>
 
-								 	
+
 									<!-- /row -->
 
 									<!-- <div class="row">
@@ -361,6 +351,9 @@
 		var output3 = document.getElementById("demo3");
 		var output4 = document.getElementById("demo4");
 
+
+		try{
+
 		output1.innerHTML = slider1.value;
 
 		slider1.oninput = function() {
@@ -384,6 +377,15 @@
 		slider4.oninput = function() {
 		  output4.innerHTML = this.value;
 		}
+
+	}
+	catch {
+		console.log('error')
+	}
+
+	finally{
+
+	}
 
 
 

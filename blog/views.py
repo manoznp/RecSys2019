@@ -189,6 +189,7 @@ def r_result(request):
     if request.method == 'POST':
         form = DurationForm(request.POST)
         if form.is_valid():
+            print('okmana')
             temperature = form.cleaned_data['temperature']
             altitude = form.cleaned_data['altitude']
             difficulty = form.cleaned_data['difficulty']
